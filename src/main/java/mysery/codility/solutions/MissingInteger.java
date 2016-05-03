@@ -5,27 +5,30 @@
  */
 package mysery.codility.solutions;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.Arrays;
 
 /**
- *
+ * https://codility.com/programmers/task/missing_integer/
  * @author mysery
  */
 public class MissingInteger {
 
-    //UNSOLVE
+    //https://codility.com/demo/results/trainingQMM4F2-PWG/
     public int solution(int[] A) {
-        int minOcurrence = 0;//minimal positive integer (greater than 0) 
-        TreeSet minMissing = new TreeSet();//minimal positive integer (greater than 0) 
-        for (int i = 0; i < A.length; i++) {
-            int B = A[i];
-            if (B > 0) {
-                minMissing.add(B);
+        boolean[] seen = new boolean[A.length];
+        Arrays.fill(seen, false);
+        for (int value : A) {
+            if (0 < value && value <= A.length) {
+                seen[value - 1] = true;
             }
         }
-        return minOcurrence;
+        for (int i = 0; i < seen.length; i++) {
+            if (seen[i] == false) {
+                return i + 1;
+            }
+        }
+
+        return A.length + 1;
     }
 
 }

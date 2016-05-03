@@ -28,5 +28,25 @@ public class MissingIntegerTest {
         int result = instance.solution(A);
         assertEquals(expResult, result);
     }
+    /**
+     * Test of solution method, of class MissingInteger.
+     */
+    @Test
+    public void testSolutionMax() {
+        int[] A = new int[]{1,3,6,4,1,546};
+        MissingInteger instance = new MissingInteger();
+        int expResult = 2;
+        int result = instance.solution(A);
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testSolutionrepeat() {
+        int[] A = new int[]{1,1,1,1,5,5,5,3,3,3,4,4,4};
+        MissingInteger instance = new MissingInteger();
+        int expResult = 2;
+        int result = instance.solution(A);
+        assertEquals(expResult, result);
+    }
     
 }
