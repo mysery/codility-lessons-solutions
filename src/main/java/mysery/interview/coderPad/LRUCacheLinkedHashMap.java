@@ -4,18 +4,18 @@ import java.util.*;
 
 /*
  * To execute Java, please define "static void main" on a class
- * named LRUCache.
+ * named LRUCacheLinkedHashMap.
  *
  * If you need more classes, simply define them inline.
  */
 //Design a "LRU" Cache with get and set methods.
-public class LRUCache {
+public class LRUCacheLinkedHashMap {
 
     private int capacity;
     private static final float hashTableLoadFactor = 0.75f;
     LinkedHashMap<String, String> map;
 
-    public LRUCache(int cacheSize) {
+    public LRUCacheLinkedHashMap(int cacheSize) {
         this.capacity = cacheSize;
         map = new LinkedHashMap(capacity, hashTableLoadFactor, true) {
 
