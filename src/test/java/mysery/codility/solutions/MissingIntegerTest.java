@@ -49,4 +49,38 @@ public class MissingIntegerTest {
         assertEquals(expResult, result);
     }
     
+    /**
+     * Test of solution method, of class MissingInteger.
+     */
+    @Test
+    public void testSolutionBitSet() {
+        int[] A = new int[]{1,3,6,4,1,2};
+        MissingInteger instance = new MissingInteger();
+        int expResult = 5;
+        int result = instance.solutionBitSet(A);
+        assertEquals(expResult, result);
+    }
+    /**
+     * Test of solution method, of class MissingInteger.
+     */
+    @Test
+    public void testSolutionMaxBitSet() {
+        int[] A = new int[]{1,3,6,4,1,546};
+        MissingInteger instance = new MissingInteger();
+        int expResult = 2;
+        int result = instance.solutionBitSet(A);
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testSolutionrepeatBitSet() {
+        int[] A = new int[]{1,1,1,1,5,5,5,3,3,3,4,4,4};
+        MissingInteger instance = new MissingInteger();
+        int expResult = 2;
+        int result = instance.solutionBitSet(A);
+        assertEquals(expResult, result);
+    }
+    
+    
+    
 }

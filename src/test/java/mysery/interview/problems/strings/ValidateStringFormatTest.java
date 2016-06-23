@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mysery.interview.problems.validateString;
+package mysery.interview.problems.strings;
 
+import mysery.interview.problems.strings.ValidateStringFormat;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mysery.codility.solutions;
+package mysery.interview.problems.strings;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
- *
+ * http://javarevisited.blogspot.com/2013/03/Anagram-how-to-check-if-two-string-are-anagrams-example-tutorial.html
  * @author mysery
  */
 public class StringAnagram {
     
+    /*
+     * Not better solution.
+     */
     public static boolean isAnagram(String word, String anagram)
     {
         if (word.length() != anagram.length())
@@ -33,6 +34,9 @@ public class StringAnagram {
                     (xorGateW == 0 && xorGateA != 0);
     }
 
+    /*
+    * Excelent solution.
+    */
     public static boolean anAnagram(String word, String anagram)
     {
         if (word.length() != anagram.length())
