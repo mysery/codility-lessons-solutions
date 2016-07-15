@@ -6,12 +6,8 @@
 package mysery.interview.problems.strings;
 
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.StringJoiner;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 /**
  * http://javarevisited.blogspot.com/2016/06/how-to-remove-duplicate-characters-from-String-Java.html
