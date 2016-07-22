@@ -40,49 +40,58 @@ package mysery.codefigths.solutions;
  */
 public class MatrixPathFind {
 
+    //score 82/300 2 hiden don't pass.
     public boolean findPath(int[][] matrix) {
         int n = matrix.length;
+        if (n == 0) {
+            return false;
+        }
         int m = matrix[0].length;
-        int nxm = n*m;
-        int jumpIndexN = 0;
-        int jumpIndexM = 0;
+        if (m == 0) {
+            return false;
+        }
+        int nxm = n * m;
+        int jumpiN = 0;
+        int jumpiM = 0;
         boolean isBackN = false;
         boolean isBackM = false;
-        int actual = matrix[jumpIndexN][jumpIndexM];
+        int actual = matrix[jumpiN][jumpiM];
         for (int i = 0; i < nxm; i++) {
-            int nextN = jumpIndexN + 1;
-            if (nextN >= n || isBackN){ 
-                nextN = jumpIndexN - 1;
-                isBackN=true;
+            int nextN = jumpiN + 1;
+            if (nextN >= n || isBackN) {
+                nextN = jumpiN - 1;
+                isBackN = true;
             }
-            int nextM = jumpIndexM + 1;
-            if (nextM >= m || isBackM){
-                nextM = jumpIndexM - 1;
-                isBackM=true;
+            int nextM = jumpiM + 1;
+            if (nextM >= m || isBackM) {
+                //if (m == 1)
+                //    nextM = jumpiM;//not move
+                //else 
+                nextM = jumpiM - 1;
+                isBackM = true;
             }
-            if (nextN <0){
-                isBackN=false;
+            if (nextN < 0) {
+                isBackN = false;
                 continue;
             }
-            if (nextM <0){
-                isBackM=false;
+            if (nextM < 0) {
+                isBackM = false;
                 continue;
             }
-            if (matrix[jumpIndexN][nextM] - actual == 1) {
-                jumpIndexM = nextM;
+            if (matrix[jumpiN][nextM] - actual == 1) {
+                jumpiM = nextM;
             } else {
-                if (matrix[nextN][jumpIndexM] - actual == 1) {
-                    jumpIndexN = nextN;
+                if (matrix[nextN][jumpiM] - actual == 1) {
+                    jumpiN = nextN;
                 } else {
-                    if (matrix[jumpIndexN][nextM] - actual < 0 && matrix[nextN][jumpIndexM] - actual < 0)
-                        return true; //no se permite el regreso.
-                    return false;
+                    //no se permite el regreso.
+
+                    return matrix[jumpiN][nextM] - actual < 0 && matrix[nextN][jumpiM] - actual < 0;
                 }
             }
 
-            actual = matrix[jumpIndexN][jumpIndexM];
+            actual = matrix[jumpiN][jumpiM];
         }
         return true;
     }
-
 }

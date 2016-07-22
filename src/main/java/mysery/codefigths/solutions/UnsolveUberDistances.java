@@ -5,8 +5,6 @@
  */
 package mysery.codefigths.solutions;
 
-import java.util.LinkedHashMap;
-
 /**
  *
  * @author mysery

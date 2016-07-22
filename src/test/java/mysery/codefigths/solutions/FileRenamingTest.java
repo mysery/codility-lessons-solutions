@@ -25,6 +25,11 @@ public class FileRenamingTest {
         names = new String[]{"a(1)", "a(6)", "a", "a", "a", "a", "a", "a", "a", "a"};
         expResult = new String[]{"a(1)", "a(6)", "a", "a(2)", "a(3)", "a(4)", "a(5)", "a(7)", "a(8)", "a(9)"};
         assertArrayEquals(expResult, FileRenaming.fileNaming(names));
+        assertTrue(isFloat(1.2f));
+        assertTrue(isFloat(1.000001f));
+        assertFalse(isFloat(1.0f));
     }
-
+    public boolean isFloat(float n) {
+        return n % 1 != 0;
+    }
 }

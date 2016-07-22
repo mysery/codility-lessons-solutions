@@ -32,6 +32,18 @@ public class MatrixPathFindTest {
         matrix = new int[][]{{2,3,4,5},{1,8,7,6},{12,9,10,11}};
         expResult = false;
         assertEquals(expResult, instance.findPath(matrix));
+        matrix = new int[][]{{}};
+        expResult = false;
+        assertEquals(expResult, instance.findPath(matrix));
+        matrix = new int[][]{{},{}};
+        expResult = false;
+        assertEquals(expResult, instance.findPath(matrix));
+        matrix = new int[][]{{1},{3}};
+        expResult = false;
+        assertEquals(expResult, instance.findPath(matrix));
+        matrix = new int[][]{{1},{2}};
+        expResult = true;
+        assertEquals(expResult, instance.findPath(matrix));
     }
 
 }
