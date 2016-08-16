@@ -13,6 +13,7 @@ import java.util.stream.IntStream;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
+import org.junit.Ignore;
 
 /**
  *
@@ -34,6 +35,7 @@ public class DragonsCurveTest {
     }
 
     @Test
+    @Ignore
     public void testCreateCurve() throws Exception {
         assertEquals("Proof all chars are ints: ", 'a', 97);
         DragonsCurve testee = new DragonsCurve();
@@ -41,6 +43,7 @@ public class DragonsCurveTest {
     }
 
     @Test
+    @Ignore
     public void testMapFunction() throws Exception {
         DragonsCurve testee = new DragonsCurve();
         final List<Integer> ins = Arrays.asList((int) 'a', (int) 'b', (int) 'F', (int) 'R', (int) 'L');
@@ -54,6 +57,7 @@ public class DragonsCurveTest {
     }
 
     @Test
+    @Ignore
     public void testHowMany() throws Exception {
         DragonsCurve testee = new DragonsCurve();
         final List<Long> fCounts = Arrays.asList(1L, 2L, 4L, 8L, 32L);
